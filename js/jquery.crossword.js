@@ -28,8 +28,8 @@
 			this.before(`<h1>Crossword game</h1>
 			<p>The goal of the game is to correctly guess all words with the help of the hints</p>
 			<div id="puzzle-clues">
-			<h2>Vodoravno</h2><ol id="across"></ol>
-			<h2>Navpično</h2><ol id="down"></ol></div>`);
+			<h2>Horizontal</h2><ol id="across"></ol>
+			<h2>Vertical</h2><ol id="down"></ol></div>`);
 			
 			// initialize some variables
 			var tbl = ['<table id="puzzle" class="crosswordtable">'],
