@@ -103,12 +103,10 @@
 							return false;
 						} else {
 							
-							console.log('input keyup: '+solvedToggle);
 							
 							puzInit.checkAnswer(e);
 
 						}
-						console.log(solved);
 						if(util.checkAllSolved())
 							alert("Congratuations! You won the game");
 
@@ -140,7 +138,6 @@
 						mode = "setting ui";
 						if (solvedToggle) solvedToggle = false;
 
-						console.log('input click: '+solvedToggle);
 					
 						nav.updateByEntry(e);
 						e.preventDefault();
@@ -269,8 +266,6 @@
 								$(light).css( "border", "2px dotted black" );
 							}
 							else input = '<input class="crosswinput" maxlength="1" val="" type="text" tabindex="-1"/>';
-							//console.log((hasOffset ? x - positionOffset : x));
-							//console.log("Beseda:"+x+", crka "+letters[i]);
 							
 							// if word number is not found or it is already printed
 							if($(light).children().length === 0){
@@ -289,10 +284,7 @@
 									$(light).find("span").text($(light).find("span").text()+(', ' + puzz.data[x-1].position));
 								}
 							}
-							console.log($(light).find("span").text().indexOf(puzz.data[x-1].position));
 						};
-						//console.log(letters);
-						//console.log(entries);
 						
 					};	
 					
@@ -325,7 +317,6 @@
 						.get()
 						.join('');
 					
-					//console.log(currVal + " " + valToCheck);
 					if(valToCheck === currVal){	
 						$('.active')
 							.addClass('done')
@@ -341,9 +332,6 @@
 					currOri === 'across' ? nav.nextPrevNav(e, 39) : nav.nextPrevNav(e, 40);
 					
 					//z++;
-					//console.log(z);
-					//console.log('checkAnswer() solvedToggle: '+solvedToggle);
-
 				}				
 
 
@@ -369,7 +357,6 @@
 					
 					selector = '.position-' + activePosition + ' input:not([disabled])';
 					
-					//console.log('nextPrevNav activePosition & struck: '+ activePosition + ' '+struck);
 						
 					// move input focus/select to 'next' input
 					switch(struck) {
@@ -440,9 +427,7 @@
 					// store orientation for 'smart' auto-selecting next input
 					currOri = $('.clues-active').parent('ol').prop('id');
 										
-					activeClueIndex = $(clueLiEls).index(e.target);
-					//console.log('updateByNav() activeClueIndex: '+activeClueIndex);
-					
+					activeClueIndex = $(clueLiEls).index(e.target);					
 				},
 			
 				// Sets activePosition var and adds active class to current entry
@@ -480,7 +465,6 @@
 						util.highlightClue();
 						
 						//$actives.eq(0).addClass('current');	
-						//console.log('nav.updateByEntry() reports activePosition as: '+activePosition);	
 				}
 				
 			}; // end nav object
@@ -550,10 +534,7 @@
 							}
 						} else {
 							activePosition = classes[0].split('-')[1];						
-						}
-						
-						console.log('getActivePositionFromClassGroup activePosition: '+activePosition);
-						
+						}						
 				},
 				
 				checkSolved: function(valToCheck) {
